@@ -25,3 +25,45 @@ if k>N:
     print(round(c,2),'яблок останется в корзине')
 elif k<N:
     print('яблок не хватит на всех школьников')
+
+###3.5
+import math
+w=543
+h=130
+S=w*h
+n=S/130**2
+print(math.floor(n))
+
+###3.6
+def find_coupe(place_number):
+    place_in_coupe=4
+    coupe_number=(place_number+3)//place_in_coupe #номер купе-это номер места+3, деленное на общее колличество мест в купе
+    return coupe_number
+place_number=int(input('введите номер места:'))
+coupe_number=find_coupe(place_number)
+print('место',place_number,'находится в',coupe_number,'купе')
+
+###3.7
+def find_floor(apartment_number):
+    floor_in_entrance=5
+    floor_number=(apartment_number+14)//floor_in_entrance
+    return floor_number
+apartment_number=int(input('введите номер квартиры:'))
+floor_number=find_floor(apartment_number)
+print('квартира',apartment_number,'находится на',floor_number,'этаже')
+
+###3.8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
