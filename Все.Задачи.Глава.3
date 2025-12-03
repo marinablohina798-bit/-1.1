@@ -53,8 +53,25 @@ floor_number=find_floor(apartment_number)
 print('квартира',apartment_number,'находится на',floor_number,'этаже')
 
 ###3.8
+def find_row(ticket_number):
+    start_number=1643
+    total_rows=20
+    total_columns=15
+    seat_index=ticket_number-start_number+1
+    if seat_index<1 or seat_index>total_rows*total_columns:
+        return None
+    column=(seat_index-1)//total_rows+1
+    row=(seat_index-1) % total_rows+1
+    return row
+test_ticket=[1643]
+for ticket in test_ticket:
+    row=find_row(ticket)
+print(f"билет {ticket}: ряд {row}")
+
 ###3.9
+
 ###3.10
+
 ###3.11
 
 ###3.12
@@ -70,7 +87,9 @@ print('квартира',apartment_number,'находится на',floor_number
 (2)
 
 ###3.13
+
 ###3.14
+
 ###3.15
 
 ###3.16
