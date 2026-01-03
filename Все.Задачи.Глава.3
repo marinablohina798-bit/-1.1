@@ -69,10 +69,45 @@ for ticket in test_ticket:
 print(f"билет {ticket}: ряд {row}")
 
 ###3.9
+import math
+n = int(input("Введите количество секунд с начала суток: "))
+# а) Полные часы
+hours = n // 3600
+# б) Полные минуты с начала часа
+minutes = (n % 3600) // 60
+# в) Полные секунды с начала минуты
+seconds = n % 60
+print(f"а) Полных часов: {hours}")
+print(f"б) Полных минут с начала часа: {minutes}")
+print(f"в) Полных секунд с начала минуты: {seconds}")
 
 ###3.10
+k = int(input("Введите k (1-365): "))
+###(a)
+a = (k - 1) % 7
+if a == 6:
+    a = 0
+else:
+    a = a + 1
+print(f"а) Если 1 января - понедельник, то n = {a}")
+###(б)
+b = (k + 1) % 7
+if b == 6:
+    b = 0
+else:
+    b = b + 1
+print(f"б) Если 1 января - вторник, то n = {b}")
+###(в)
+d = int(input("Введите d (1-7), где 1-пн, 2-вт, ..., 7-вс: "))
+c = (k - 1 + d - 1) % 7
+if c == 6:
+    c = 0
+else:
+    c = c + 1
+print(f"в) Если 1 января - {d}-й день недели, то n = {c}")
 
 ###3.11
+
 
 ###3.12
 (1)
@@ -83,7 +118,6 @@ def find_floor(apartment_number):
 apartment_number=int(input('введите номер квартиры:'))
 floor_number=find_floor(apartment_number)
 print('квартира',apartment_number,'находится на',floor_number,'этаже')
-###3.12
 (2)
 
 ###3.13
