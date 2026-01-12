@@ -1,1 +1,204 @@
+###8.1
+n = int(input("Введите n: "))
+i = 1
+while i*i <= n:
+    print(i*i)
+    i += 1
 
+###8.2
+###1
+n = int(input("Введите n: "))
+i = 1
+while i*i <= n:
+    i += 1
+print("Первое число больше n:", i*i)
+###2
+n = int(input("Введите n: "))
+i = int(n**0.5) + 1
+print("Первое число больше n:", i*i)
+
+###8.3
+a = float(input("Введите a (0 < a ≤ 1): "))
+znam = 1
+while True:
+    значение = 1/znam
+    if значение >= a:
+        print(значение)
+    else:
+        break
+    znam += 1
+
+###8.4
+a = float(input("Введите a (0 < a ≤ 1): "))
+znam = 1
+while True:
+    значение = 1/znam
+    if значение < a:
+        print("Первое число меньше a:", значение)
+        break
+    znam += 1
+
+###8.5
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while True:
+    значение = 1 + 1/n
+    if значение >= a:
+        print(значение)
+    else:
+        break
+    n += 1
+
+###8.6
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while True:
+    значение = 1 + 1/n
+    if значение >= a:
+        print(значение)
+    n += 1
+    if значение < a:
+        break
+
+###8.7
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while True:
+    значение = 1 + 1/n
+    if значение < a:
+        print("Первое число меньше a:", значение)
+        break
+    n += 1
+
+###8.8
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while 1 + 1/n >= a:
+    print(f"n = {n}, значение = {1 + 1/n}")
+    n += 1
+
+###8.9
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while 1 + 1/n >= a:
+    n += 1
+print("Наименьшее n, при котором последнее число меньше a:", n)
+
+###8.10
+a = float(input("Введите a: "))
+n = 1
+while True:
+    значение = 1 + 1/n
+    if значение < a:
+        print(значение)
+    else:
+        break
+    n += 1
+
+###8.11
+n = float(input("Введите n: "))
+сумма = 0
+k = 1
+while сумма <= n:
+    сумма += 1/k
+    k += 1
+print("Первое число, большее n:", сумма)
+
+###8.12
+a = float(input("Введите a: "))
+сумма = 0
+k = 1
+while сумма <= a:
+    сумма += 1/k
+    k += 1
+print("Все значения n, при которых сумма > a:")
+for i in range(1, k):
+    print(i)
+
+###8.13
+a = float(input("Введите a: "))
+сумма = 0
+k = 1
+while сумма <= a:
+    сумма += 1/k
+    k += 1
+print("Наименьшее n, при котором сумма > a:", k-1)
+
+###8.14
+a = float(input("Введите a (0 < a ≤ 1): "))
+###1
+znam = 1
+while True:
+    значение = 1/znam
+    if значение < a:
+        print("Первое число меньше a:", значение)
+        break
+    znam += 1
+###2
+from math import ceil
+n = ceil(1/a)
+print("Первое число меньше a:", 1/n)
+
+###8.15
+m = float(input("Введите m (0.52 ≤ m ≤ 33.7): "))
+x = 1
+while x <= 100:
+    y = (x*x + 100) / (x + 200)
+    if y < m:
+        print(f"x={x}, y={y}")
+    x += 1
+
+###8.16
+m = float(input("Введите m (0.5 < m < 1): "))
+n = 1
+while True:
+    значение = n / (n + 1)
+    if значение < m:
+        print(значение)
+    else:
+        break
+    n += 1
+
+###8.17
+num1, num2 = 1, 2
+den1, den2 = 1, 1
+n = 3
+while True:
+    num3 = num1 + num2
+    den3 = den1 + den2
+    значение = num3 / den3
+    предыдущее = num2 / den2
+    if abs(значение - предыдущее) <= 0.001:
+        print(f"Первый член, отличающийся от предыдущего не более чем на 0.001: {значение}")
+        break
+    num1, num2 = num2, num3
+    den1, den2 = den2, den3
+    n += 1
+
+###8.18
+import math
+a = float(input("Введите a: "))
+x = float(input("Введите x: "))
+eps = float(input("Введите ε: "))
+y_prev = a
+while True:
+    y_curr = 0.5 * (y_prev + x / (y_prev - 1))
+    if abs(y_curr*y_curr - y_prev*y_prev) < eps:
+        print(f"Первый член y_n: {y_curr}")
+        break
+    y_prev = y_curr
+
+###8.19
+###(a)
+a, b = 1, 1
+сумма = 0
+while a <= 1000:
+    сумма += a
+    a, b = b, a + b
+print("Сумма чисел Фибоначчи, не превосходящих 1000:", сумма)
+###(б)
+n = int(input("Введите n (>1): "))
+a, b = 1, 1
+while a <= n:
+    a, b = b, a + b
+print("Первое число Фибоначчи, большее n:", a)
