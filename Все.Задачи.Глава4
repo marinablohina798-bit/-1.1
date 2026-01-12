@@ -1,1 +1,1036 @@
+###4.1
+a, b = 5.5, 3.2
+print("Большее:", max(a, b))
+print("Меньшее:", min(a, b))
 
+###4.2
+import math
+x = 1.5
+if x > 0:
+    y = math.sin(x) ** 2
+else:
+    y = 1 - 2 * math.sin(x ** 2)
+print("y =", y)
+
+###4.3
+import math
+x = -2
+if x > 0:
+    y = math.sin(x ** 2)
+else:
+    y = 1 + 2 * (math.sin(x) ** 2)
+print("y =", y)
+
+###4.4
+x, y = 3, 3
+if x < 4:
+    print("Область I")
+else:
+    print("Область II")
+
+###4.5
+x, y = 1, 4
+if y > 3:
+    print("Область I")
+else:
+    print("Область II")
+
+###4.6
+x = 1.5
+if x < 2:
+    y = x + 2
+else:
+    y = -x + 4
+print("y =", y)
+
+###4.7
+import math
+x = 1
+if math.sin(x) < 0:
+    k = x ** 2
+else:
+    k = abs(x)
+if k < x:
+    f = k * x
+else:
+    f = k + x
+print("f =", f)
+
+###4.8
+import math
+x = 1
+if math.sin(x) >= 0:
+    k = x ** 2
+else:
+    k = abs(x)
+if x < k:
+    f = abs(x)
+else:
+    f = k * x
+print("f =", f)
+
+###4.9
+a, b = 7.3, 9.1
+if a > b:
+    print("max =", a, "min =", b)
+else:
+    print("max =", b, "min =", a)
+
+###4.10
+km, ft = 5, 20000
+m_km = km * 1000
+m_ft = ft * 0.3048
+if m_km < m_ft:
+    print("Километры меньше")
+else:
+    print("Футы меньше")
+
+###4.11
+kmh = float(input())
+ms = float(input())
+print("km/h" if kmh/3.6 > ms else "m/s")
+
+###4.12
+r = float(input())
+side = float(input())
+print("circle" if math.pi*r**2 > side**2 else "square")
+
+###4.13
+v1, m1 = map(float, input().split())
+v2, m2 = map(float, input().split())
+print("1" if m1/v1 > m2/v2 else "2")
+
+###4.14
+r1, u1 = map(float, input().split())
+r2, u2 = map(float, input().split())
+print("1" if u1/r1 < u2/r2 else "2")
+
+###4.15
+a, b, c = map(float, input().split())
+print("Yes" if b**2 - 4*a*c >= 0 else "No")
+
+###4.16
+a, b, c = map(float, input().split())
+D = b**2 - 4*a*c
+if D >= 0:
+    x1 = (-b + D**0.5)/(2*a)
+    x2 = (-b - D**0.5)/(2*a)
+    print(x1, x2)
+else:
+    print("нет корней")
+
+###4.17
+yb, mb = map(int, input().split())
+yt, mt = map(int, input().split())
+age = yt - yb - (1 if mb > mt else 0)
+print(age)
+
+###4.18
+s_circle = float(input())
+s_square = float(input())
+side = s_square**0.5
+diameter = 2*(s_circle/math.pi)**0.5
+print("Yes" if diameter <= side else "No")
+print("Yes" if side*2**0.5 <= diameter else "No")
+
+###4.19
+import math
+s_circle = float(input())
+s_triangle = float(input())
+side_triangle = math.sqrt(4 * s_triangle / math.sqrt(3))
+r_circle = math.sqrt(s_circle / math.pi)
+h_triangle = side_triangle * math.sqrt(3) / 2
+r_in = h_triangle / 3
+R_out = 2 * h_triangle / 3
+print("да" if 2 * r_circle <= side_triangle else "нет")
+print("да" if side_triangle <= 2 * r_circle else "нет")
+
+###4.20
+x1, y1, x2, y2 = map(float, input().split())
+x3, y3, x4, y4 = map(float, input().split())
+x_min = min(x1, x3)
+y_min = min(y1, y3)
+x_max = max(x2, x4)
+y_max = max(y2, y4)
+print(x_min, y_min, x_max, y_max)
+
+###4.21
+x1, y1, w1, h1 = map(float, input().split())
+x2, y2, w2, h2 = map(float, input().split())
+x_min = min(x1, x2)
+y_min = min(y1, y2)
+x_max = max(x1 + w1, x2 + w2)
+y_max = max(y1 + h1, y2 + h2)
+print(x_min, y_min, x_max, y_max)
+
+###4.22
+m, n = map(int, input().split())
+if m % n == 0:
+    print(m // n)
+else:
+    print(f"{m} на {n} нацело не делится")
+
+###4.23
+a, n = map(int, input().split())
+print("Yes" if n % a == 0 else "No")
+
+###4.24
+n = int(input())
+print("четное" if n % 2 == 0 else "нечетное")
+print("оканчивается на 7" if n % 10 == 7 else "не оканчивается на 7")
+
+###4.25
+n = int(input())
+print(n + 2 if n % 2 == 0 else n + 1)
+
+###4.26
+n = int(input())
+a, b = n // 10, n % 10
+print("первая" if a > b else "вторая" if b > a else "равны")
+print("да" if a == b else "нет")
+
+###4.27
+n = int(input())
+a, b = n // 10, n % 10
+print("да" if n**2 == 4*(a**3 + b**3) else "нет")
+
+###4.28
+n = int(input())
+s = n // 10 + n % 10
+print("да" if s >= 10 else "нет")
+a = int(input())
+print("да" if s > a else "нет")
+
+###4.29
+n = int(input())
+s = n // 10 + n % 10
+print("да" if s % 3 == 0 else "нет")
+a = int(input())
+print("да" if s % a == 0 else "нет")
+
+###4.30
+n = int(input())
+print("да" if n // 100 == n % 10 else "нет")
+
+###4.31
+n = int(input())
+c1, c2, c3 = n // 100, n // 10 % 10, n % 10
+print("первая" if c1 > c3 else "последняя" if c3 > c1 else "равны")
+print("первая" if c1 > c2 else "вторая" if c2 > c1 else "равны")
+print("вторая" if c2 > c3 else "последняя" if c3 > c2 else "равны")
+
+###4.32
+n = int(input())
+c1, c2, c3 = n // 100, n // 10 % 10, n % 10
+print("да" if n**2 == c1**3 + c2**3 + c3**3 else "нет")
+
+###4.33
+n = int(input())
+c1, c2, c3 = n // 100, n // 10 % 10, n % 10
+s, p = c1 + c2 + c3, c1 * c2 * c3
+print("да" if s >= 10 else "нет")
+print("да" if p >= 100 else "нет")
+a = int(input())
+print("да" if p > a else "нет")
+print("да" if s % 5 == 0 else "нет")
+print("да" if s % a == 0 else "нет")
+
+###4.34
+n = int(input())
+c1, c2, c3 = n // 100, n // 10 % 10, n % 10
+print("да" if c1 == c2 == c3 else "нет")
+print("да" if c1 == c2 or c2 == c3 or c1 == c3 else "нет")
+
+###4.35
+n = int(input())
+c1, c2, c3, c4 = n // 1000, n // 100 % 10, n // 10 % 10, n % 10
+print("да" if c1 + c2 == c3 + c4 else "нет")
+print("да" if (c1 + c2 + c3 + c4) % 3 == 0 else "нет")
+print("да" if (c1 * c2 * c3 * c4) % 4 == 0 else "нет")
+a = int(input())
+print("да" if (c1 * c2 * c3 * c4) % a == 0 else "нет")
+
+###4.36
+n = int(input())
+print("да" if n % 10 % 2 == 0 else "нет")
+print("да" if n % 10 % 2 == 1 else "нет")
+
+###4.37
+a, b = map(int, input().split())
+print("да" if b % a == 0 else "нет")
+print("да" if a % b == 0 else "нет")
+
+###4.38
+a, b = map(int, input().split())
+c, d = map(int, input().split())
+count1 = (a // c) * (b // d)
+count2 = (a // d) * (b // c)
+print("вдоль длинной" if count1 > count2 else "вдоль короткой")
+
+###4.39
+t = float(input())
+cycle = 5
+t_in_cycle = t % cycle
+print("зеленый" if t_in_cycle < 3 else "красный")
+
+###4.40
+x = float(input())
+print("принадлежит" if -5 < x < 3 else "не принадлежит")
+
+###4.41
+n = int(input())
+print("да" if 10 <= n <= 99 else "нет")
+
+###4.42
+x, y = map(float, input().split())
+print("да" if 0 <= x <= 2 and 0 <= y <= 2 else "нет")
+
+###4.43
+x, y = map(float, input().split())
+print("да" if 0 <= x <= 3 and 0 <= y <= 2 else "нет")
+
+###4.44
+x, y = map(float, input().split())
+print("да" if (x >= 5 and y >= -1) or (x <= -1 and y <= 5) else "нет")
+
+###4.45
+x = float(input())
+print(x**2 if -2.4 <= x <= 5.7 else 4)
+
+###4.46
+x = float(input())
+import math
+print(math.sin(x) if 0.2 <= x <= 0.9 else 1)
+
+###4.47
+a, b, c = map(float, input().split())
+print("да" if a < b < c else "нет")
+print("да" if b > a > c else "нет")
+
+###4.48
+a, b = map(int, input().split())
+print("да" if a % b == 0 or b % a == 0 else "нет")
+
+###4.49
+n = int(input())
+a = int(input())
+d1, d2 = n // 10, n % 10
+print("да" if d1 == 3 or d2 == 3 else "нет")
+print("да" if d1 == a or d2 == a else "нет")
+
+###4.50
+n = int(input())
+d1, d2 = n // 10, n % 10
+print("да" if d1 in (4,7) or d2 in (4,7) else "нет")
+print("да" if d1 in (3,6,9) or d2 in (3,6,9) else "нет")
+
+###4.51
+n = int(input())
+c1, c2, c3 = n // 100, n // 10 % 10, n % 10
+print("да" if 6 in (c1, c2, c3) else "нет")
+
+###4.52
+n = int(input())
+c1, c2, c3 = n//100, n//10%10, n%10
+print("да" if 6 in (c1, c2, c3) else "нет")
+
+###4.53
+n = int(input())
+c1, c2, c3 = n//100, n//10%10, n%10
+print("да" if 4 in (c1, c2, c3) or 7 in (c1, c2, c3) else "нет")
+print("да" if 3 in (c1, c2, c3) or 6 in (c1, c2, c3) or 9 in (c1, c2, c3) else "нет")
+
+###4.54
+n = int(input())
+b = int(input())
+c1, c2, c3, c4 = n//1000, n//100%10, n//10%10, n%10
+print("да" if 4 in (c1, c2, c3, c4) else "нет")
+print("да" if b in (c1, c2, c3, c4) else "нет")
+
+###4.55
+n = int(input())
+c1, c2, c3, c4 = n//1000, n//100%10, n//10%10, n%10
+print("да" if 2 in (c1, c2, c3, c4) or 7 in (c1, c2, c3, c4) else "нет")
+print("да" if 3 in (c1, c2, c3, c4) or 6 in (c1, c2, c3, c4) or 9 in (c1, c2, c3, c4) else "нет")
+
+###4.56
+n = int(input())
+c1, c2, c3, c4 = n // 1000, n // 100 % 10, n // 10 % 10, n % 10
+print("да" if c1 == c4 and c2 == c3 else "нет")
+
+###4.57
+a, b, c, d = map(int, input().split())
+print("да" if a % b == c or a % b == d else "нет")
+
+###4.58
+a, b, c = map(float, input().split())
+print("да" if a == b or b == c or a == c else "нет")
+
+###4.59
+a, b, c = map(float, input().split())
+print("равносторонний" if a == b == c else "равнобедренный" if a == b or b == c or a == c else "разносторонний")
+
+###4.60
+h1, h2, h3 = map(float, input().split())
+print("да" if h1 == h2 == h3 else "нет")
+
+###4.61
+import math
+a, b, c = map(float, input().split())
+D = b**2 - 4*a*c
+if D > 0:
+    x1 = (-b + math.sqrt(D))/(2*a)
+    x2 = (-b - math.sqrt(D))/(2*a)
+    print(x1, x2)
+elif D == 0:
+    print(-b/(2*a))
+else:
+    print("нет корней")
+
+###4.62
+a,b,c,d = map(float, input().split())
+print("да" if a<=c and b<=d or a<=d and b<=c else "нет")
+
+###4.63
+a,b = map(float, input().split())
+c,d = map(float, input().split())
+print("да" if c+2 <= a and d+2 <= b or d+2 <= a and c+2 <= b else "нет")
+
+###4.64
+a,b,d = map(float, input().split())
+print("да" if d+2 <= a and d+2 <= b else "нет")
+
+###4.65
+a,b,c,x,y = map(float, input().split())
+print("да" if (a<=x and b<=y) or (a<=y and b<=x) or (a<=x and c<=y) or (a<=y and c<=x) or (b<=x and c<=y) or (b<=y and c<=x) else "нет")
+
+###4.66
+a1,a2,a3 = map(float, input().split())
+b1,b2,b3 = map(float, input().split())
+print("да" if (b1<=a1 and b2<=a2 and b3<=a3) or (b1<=a1 and b3<=a2 and b2<=a3) or (b2<=a1 and b1<=a2 and b3<=a3) or (b2<=a1 and b3<=a2 and b1<=a3) or (b3<=a1 and b1<=a2 and b2<=a3) or (b3<=a1 and b2<=a2 and b1<=a3) else "нет")
+
+###4.67
+n = int(input())
+s1 = n//100000 + n//10000%10 + n//1000%10
+s2 = n//100%10 + n//10%10 + n%10
+print("счастливое" if s1 == s2 else "несчастливое")
+
+###4.68
+n = int(input())
+print("да" if (n % 4 == 0 and n % 100 != 0) or (n % 400 == 0) else "нет")
+
+###4.69
+a,b = map(int, input().split())
+c,d,e = map(int, input().split())
+count1 = (a // c) * (b // d)
+count2 = (a // d) * (b // c)
+count3 = (a // c) * (b // e)
+count4 = (a // e) * (b // c)
+count5 = (a // d) * (b // e)
+count6 = (a // e) * (b // d)
+print(max(count1, count2, count3, count4, count5, count6))
+
+###4.70
+k = int(input())
+print("выходной" if (k - 1) % 7 in (5, 6) else "рабочий")
+
+###4.71
+import math
+alpha, v0 = map(float, input().split())
+R, H, P = map(float, input().split())
+g = 9.8
+t = R / (v0 * math.cos(math.radians(alpha)))
+y = v0 * t * math.sin(math.radians(alpha)) - g * t**2 / 2
+print("поразит" if H <= y <= H + P else "не поразит")
+
+###4.72
+x1,y1,w1,h1 = map(float, input().split())
+x2,y2,w2,h2 = map(float, input().split())
+print("да" if x1>=x2 and y1>=y2 and x1+w1<=x2+w2 and y1+h1<=y2+h2 else "нет")
+print("да" if (x1>=x2 and y1>=y2 and x1+w1<=x2+w2 and y1+h1<=y2+h2) or (x2>=x1 and y2>=y1 and x2+w2<=x1+w1 and y2+h2<=y1+h1) else "нет")
+print("да" if not (x1+w1<x2 or x2+w2<x1 or y1+h1<y2 or y2+h2<y1) else "нет")
+
+###4.73
+a2,a1,b = map(int, input().split())
+n = a2*10 + a1 - b
+print(n//10, n%10)
+
+###4.74
+a2,a1,b2,b1 = map(int, input().split())
+n = a2*10 + a1 - b2*10 - b1
+print(n//10, n%10)
+
+###4.75
+a3,a2,a1,b2,b1 = map(int, input().split())
+n = a3*100 + a2*10 + a1 - b2*10 - b1
+print(n//100, n//10%10, n%10)
+
+###4.76
+a,b,c,d = map(int, input().split())
+print("да" if a==c or b==d else "нет")
+print("да" if abs(a-c)==abs(b-d) else "нет")
+print("да" if abs(a-c)<=1 and abs(b-d)<=1 else "нет")
+print("да" if a==c or b==d or abs(a-c)==abs(b-d) else "нет")
+print("да" if (a==c and b+1==d) or (b==1 and d==3 and a==c) else "нет")
+print("да" if abs(a-c)==1 and b+1==d else "нет")
+print("да" if (a==c and b-1==d) or (b==7 and d==5 and a==c) else "нет")
+print("да" if abs(a-c)==1 and b-1==d else "нет")
+print("да" if abs(a-c)==2 and abs(b-d)==1 or abs(a-c)==1 and abs(b-d)==2 else "нет")
+
+###4.77
+a,b,c,d,e,f = map(int, input().split())
+print("да" if (a==e or b==f) and not (a==c and (min(b,f)<=d<=max(b,f)) or b==d and (min(a,e)<=c<=max(a,e))) else "нет")
+
+###4.78
+a,b,c,d = map(int, input().split())
+print("да" if (a+b)%2 == (c+d)%2 else "нет")
+
+###4.79
+a,b,c = map(float, input().split())
+print("существует" if a+b>c and a+c>b and b+c>a else "не существует")
+
+###4.80
+a,b,c = map(float, input().split())
+if a+b>c and a+c>b and b+c>a:
+    sides = sorted([a,b,c])
+    print("прямоугольный" if abs(sides[0]**2 + sides[1]**2 - sides[2]**2) < 1e-9 else "не прямоугольный")
+else:
+    print("не существует")
+
+###4.81
+a,b,c = map(float, input().split())
+if a+b>c and a+c>b and b+c>a:
+    sides = sorted([a,b,c])
+    if abs(sides[0]**2 + sides[1]**2 - sides[2]**2) < 1e-9:
+        print("прямоугольный", end=" ")
+    elif sides[0]**2 + sides[1]**2 > sides[2]**2:
+        print("остроугольный", end=" ")
+    else:
+        print("тупоугольный", end=" ")
+    if a==b==c:
+        print("равносторонний")
+    elif a==b or b==c or a==c:
+        print("равнобедренный")
+    else:
+        print("разносторонний")
+else:
+    print("не существует")
+
+###4.82
+n = int(input())
+if 10 <= n % 100 <= 20:
+    suffix = "лет"
+elif n % 10 == 1:
+    suffix = "год"
+elif n % 10 in (2,3,4):
+    suffix = "года"
+else:
+    suffix = "лет"
+print(f"мне {n} {suffix}")
+
+###4.83
+k = int(input())
+if 10 <= k % 100 <= 20 or k % 10 in [0, 5, 6, 7, 8, 9]:
+    word = "грибов"
+elif k % 10 == 1:
+    word = "гриб"
+else:
+    word = "гриба"
+print(f"мы нашли {k} {word} в лесу")
+
+###4.84
+n = int(input())
+rub = n // 100
+kop = n % 100
+if rub == 0:
+    print(f"{kop} копеек")
+elif kop == 0:
+    print(f"{rub} рублей")
+else:
+    print(f"{rub} рублей {kop} копеек")
+
+###4.85
+n = int(input())
+years = n // 12
+months = n % 12
+if years == 0:
+    print(f"{months} месяцев")
+elif months == 0:
+    print(f"{years} лет")
+else:
+    print(f"{years} год {months} месяцев")
+
+###4.86
+y1, m1, d1 = map(int, input().split())
+y2, m2, d2 = map(int, input().split())
+age = y2 - y1 - (1 if (m1 > m2) or (m1 == m2 and d1 > d2) else 0)
+print(age)
+
+###4.87
+y1, m1, d1 = map(int, input().split())
+y2, m2, d2 = map(int, input().split())
+if y1 < y2:
+    print("первый старше")
+elif y1 > y2:
+    print("второй старше")
+elif m1 < m2:
+    print("первый старше")
+elif m1 > m2:
+    print("второй старше")
+elif d1 < d2:
+    print("первый старше")
+elif d1 > d2:
+    print("второй старше")
+else:
+    print("ровесники")
+
+###4.88
+yb, mb = map(int, input().split())
+yt, mt = map(int, input().split())
+years = yt - yb
+months = mt - mb
+if months < 0:
+    years -= 1
+    months += 12
+print(f"{years} лет {months} месяцев")
+
+###4.89
+a,b,c,d,n,m = map(int, input().split())
+start_min = a*60 + b
+end_min = c*60 + d
+arrival_min = n*60 + m
+print("да" if start_min <= arrival_min < end_min else "нет")
+
+###4.90
+n,m = map(int, input().split())
+days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
+if n > 1:
+    print(n-1, m)
+else:
+    print(days_in_month[m-2], m-1)
+if n < days_in_month[m-1]:
+    print(n+1, m)
+else:
+    print(1, m+1)
+
+###4.91
+g,m,n = map(int, input().split())
+is_leap = (g % 4 == 0 and g % 100 != 0) or (g % 400 == 0)
+days_in_month = [31,29 if is_leap else 28,31,30,31,30,31,31,30,31,30,31]
+if n > 1:
+    print(g, m, n-1)
+elif m > 1:
+    print(g, m-1, days_in_month[m-2])
+else:
+    print(g-1, 12, 31)
+if n < days_in_month[m-1]:
+    print(g, m, n+1)
+elif m < 12:
+    print(g, m+1, 1)
+else:
+    print(g+1, 1, 1)
+
+###4.92
+t = float(input())
+cycle = 6
+t_in_cycle = t % cycle
+if t_in_cycle < 3:
+    print("зеленый")
+elif t_in_cycle < 4:
+    print("желтый")
+else:
+    print("красный")
+
+###4.93
+k,d = map(int, input().split())
+day_num = (k + d - 2) % 7
+if day_num == 5:
+    print("суббота")
+elif day_num == 6:
+    print("воскресенье")
+else:
+    print("рабочий день")
+
+###4.94
+k = int(input())
+if k <= 180:
+    if k % 2 == 1:
+        num = 10 + (k+1)//2 - 1
+        print(num // 10)
+    else:
+        num = 10 + k//2 - 1
+        print(num % 10)
+
+###4.95
+n = int(input())
+seq = "0"
+for i in range(1, 21):
+    seq += str(i)
+print(seq[n-1])
+
+###4.96
+k = int(input())
+seq = ""
+for i in range(50, 251):
+    seq += str(i)
+print(seq[k-1])
+
+###4.97
+k = int(input())
+seq = ""
+for i in range(1, 111):
+    seq += str(i)
+print(seq[k-1])
+
+###4.98
+n,a = map(int, input().split())
+first = a
+last = a + n - 1
+sum_nums = n * (first + last) // 2
+print("четное" if sum_nums % 2 == 0 else "нечетное")
+
+###4.99
+a,b = map(float, input().split())
+if a > b:
+    print(a)
+else:
+    print(b)
+
+###4.100
+a,b = map(float, input().split())
+print(max(a,b), min(a,b))
+
+###4.101
+a,b,c = map(float, input().split())
+print(max(a,b,c))
+print(min(a,b,c))
+
+###4.102
+a,b,c,d = map(float, input().split())
+print(max(a,b,c,d))
+print(min(a,b,c,d))
+
+###4.103
+x = float(input())
+print(-x if x < 0 else x)
+
+###4.104
+a,b = map(float, input().split())
+print((abs(a)+abs(b))/2)
+print((abs(a)*abs(b))**0.5)
+
+###4.105
+a,b = map(float, input().split())
+if abs(a) > abs(b):
+    a /= 2
+print(a)
+
+###4.106
+a,b = map(float, input().split())
+if b**0.5 < a:
+    b *= 5
+print(b)
+
+###4.107
+a,b,c = map(int, input().split())
+if a%2==0: print(a)
+if b%2==0: print(b)
+if c%2==0: print(c)
+
+###4.108
+a,b,c = map(float, input().split())
+if a>=0: a*=a
+if b>=0: b*=b
+if c>=0: c*=c
+print(a,b,c)
+
+###4.109
+a,b,c = map(float, input().split())
+if 1.6 <= a <= 3.8: print(a)
+if 1.6 <= b <= 3.8: print(b)
+if 1.6 <= c <= 3.8: print(c)
+
+###4.110
+a,b,c,d = map(float, input().split())
+count=0
+if a<0: count+=1
+if b<0: count+=1
+if c<0: count+=1
+if d<0: count+=1
+print(count)
+
+###4.111
+a,b,c,d = map(int, input().split())
+count=0
+if a%2==0: count+=1
+if b%2==0: count+=1
+if c%2==0: count+=1
+if d%2==0: count+=1
+print(count)
+
+###4.112
+a,b,c = map(int, input().split())
+s=0
+if a>0: s+=a
+if b>0: s+=b
+if c>0: s+=c
+print(s)
+
+###4.113
+a,b,c,d = map(float, input().split())
+s=0
+if a>5: s+=a
+if b>5: s+=b
+if c>5: s+=c
+if d>5: s+=d
+print(s)
+
+###4.114
+a,b,c,d = map(int, input().split())
+s=0
+if a%3==0: s+=a
+if b%3==0: s+=b
+if c%3==0: s+=c
+if d%3==0: s+=d
+print(s)
+
+###4.115
+a,b,c,d,e,f = map(int, input().split())
+s=0
+if a>0: s+=a
+if b>0: s+=b
+if c>0: s+=c
+if d>0: s+=d
+if e>0: s+=e
+if f>0: s+=f
+print(s)
+
+###4.116
+x = float(input())
+if x < -1: print(-1)
+elif x > -1: print(x)
+else: print(1)
+
+###4.117
+a = float(input())
+if a > 0: print(1)
+elif a == 0: print(0)
+else: print(-1)
+
+###4.118
+x = float(input())
+if x <= 0: print(0)
+elif x <= 1: print(x)
+else: print(x**2)
+
+###4.119
+y = float(input())
+if y > 2: print(2)
+elif y > 0: print(0)
+else: print(-3*y)
+
+###4.120
+x = float(input())
+if x < -1: print(0)
+elif x <= 1: print(1)
+else: print(-1)
+
+###4.121
+x,y = map(float, input().split())
+if x < 1:
+    print("I")
+elif x < 5:
+    print("II")
+else:
+    print("III")
+
+###4.122
+x,y = map(float, input().split())
+if y > 5:
+    print("I")
+elif y > 2.5:
+    print("II")
+else:
+    print("III")
+
+###4.123
+points = int(input())
+if points == 3:
+    print("выигрыш")
+elif points == 1:
+    print("ничья")
+else:
+    print("проигрыш")
+
+###4.124
+m,v = map(int, input().split())
+if m > v:
+    print("Миша старше")
+elif m < v:
+    print("Вася старше")
+else:
+    print("ровесники")
+
+###4.125
+weight = float(input())
+if weight < 60:
+    print("легкий вес")
+elif weight < 64:
+    print("первый полусредний")
+else:
+    print("полусредний")
+
+###4.126
+a,b = map(int, input().split())
+if b % a == 0:
+    print("a делитель b")
+elif a % b == 0:
+    print("b делитель a")
+else:
+    print("не делители")
+
+###4.127
+a,b,c = map(int, input().split())
+if a > b and a > c:
+    print("первое наибольшее")
+elif b > a and b > c:
+    print("второе наибольшее")
+else:
+    print("третье наибольшее")
+if a < b and a < c:
+    print("первое наименьшее")
+elif b < a and b < c:
+    print("второе наименьшее")
+else:
+    print("третье наименьшее")
+sorted_nums = sorted([a,b,c])
+print(sorted_nums[1])
+
+###4.128
+a,b,c = map(float, input().split())
+print(max(a,b,c), min(a,b,c))
+
+###4.129
+a,b,c = map(float, input().split())
+sorted_nums = sorted([a,b,c])
+print(sorted_nums[1] + sorted_nums[2])
+
+###4.130
+a,b,c = map(float, input().split())
+sorted_nums = sorted([a,b,c])
+print(sorted_nums[0] * sorted_nums[1])
+
+###4.131
+a1,a2,a3 = map(float, input().split())
+b1,b2,b3 = map(float, input().split())
+sorted_a = sorted([a1,a2,a3])
+sorted_b = sorted([b1,b2,b3])
+print((sorted_a[1] + sorted_b[1])/2)
+
+###4.132
+x,y = map(float, input().split())
+if x > 0 and y > 0:
+    print("I")
+elif x < 0 and y > 0:
+    print("II")
+elif x < 0 and y < 0:
+    print("III")
+elif x > 0 and y < 0:
+    print("IV")
+
+###4.133
+n = int(input())
+days = ["понедельник","вторник","среда","четверг","пятница","суббота","воскресенье"]
+print(days[n-1])
+
+###4.134
+n = int(input())
+months = ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"]
+print(months[n-1])
+
+###4.135
+n = int(input())
+if n in [12,1,2]:
+    print("зима")
+elif n in [3,4,5]:
+    print("весна")
+elif n in [6,7,8]:
+    print("лето")
+else:
+    print("осень")
+
+###4.136
+n = int(input())
+leap = input() == "да"
+days = [31,29 if leap else 28,31,30,31,30,31,31,30,31,30,31]
+print(days[n-1])
+
+###4.137
+n = int(input())
+days = [31,28,31,30,31,30,31,31,30,31,30,31]
+print(days[n-1])
+
+###4.138
+m = int(input())
+suits = ["пики","трефы","бубны","червы"]
+print(suits[m-1])
+
+###4.139
+k = int(input())
+cards = {6:"шестерка",7:"семерка",8:"восьмерка",9:"девятка",10:"десятка",11:"валет",12:"дама",13:"король",14:"туз"}
+print(cards.get(k, "неизвестно"))
+
+###4.140
+m,k = map(int, input().split())
+suits = ["пик","треф","бубен","червей"]
+cards = {6:"шестерка",7:"семерка",8:"восьмерка",9:"девятка",10:"десятка",11:"валет",12:"дама",13:"король",14:"туз"}
+print(f"{cards[k]} {suits[m-1]}")
+
+###4.141
+k,d = map(int, input().split())
+day_num = (k + d - 2) % 7
+days = ["понедельник","вторник","среда","четверг","пятница","суббота","воскресенье"]
+print(days[day_num])
+
+###4.142
+n = int(input())
+months = ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"]
+print(months[(n-1) % 12])
+
+###4.143
+n,m = map(int, input().split())
+days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
+if n > 1:
+    print(n-1, m)
+else:
+    print(days_in_month[m-2], m-1)
+if n < days_in_month[m-1]:
+    print(n+1, m)
+else:
+    print(1, m+1)
+
+###4.144
+g,m,n = map(int, input().split())
+is_leap = (g % 4 == 0 and g % 100 != 0) or (g % 400 == 0)
+days_in_month = [31,29 if is_leap else 28,31,30,31,30,31,31,30,31,30,31]
+if n > 1:
+    print(g, m, n-1)
+elif m > 1:
+    print(g, m-1, days_in_month[m-2])
+else:
+    print(g-1, 12, 31)
+if n < days_in_month[m-1]:
+    print(g, m, n+1)
+elif m < 12:
+    print(g, m+1, 1)
+else:
+    print(g+1, 1, 1)
+
+###4.145
+n = int(input())
+animals = ["Крыса","Корова","Тигр","Заяц","Дракон","Змея","Лошадь","Овца","Обезьяна","Петух","Собака","Свинья"]
+colors = ["Зеленый","Красный","Желтый","Белый","Черный"]
+year_in_cycle = (n - 4) % 60
+color_index = (year_in_cycle // 2) % 5
+animal_index = year_in_cycle % 12
+print(f"{animals[animal_index]}, {colors[color_index]}")
