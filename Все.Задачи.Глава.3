@@ -107,24 +107,53 @@ else:
 print(f"в) Если 1 января - {d}-й день недели, то n = {c}")
 
 ###3.11
-
+n = int(input('Введите количество месяцев: '))
+x = (n % 12) + 1
+print('Месяц этого дня имеет номер:', x)
+print('1-январь, 2-февраль, ..., 11-ноябрь, 12-декабрь')
 
 ###3.12
-(1)
-def find_floor(apartment_number):
-    floor_in_entrance=5
-    floor_number=(apartment_number+19)//floor_in_entrance
-    return floor_number
-apartment_number=int(input('введите номер квартиры:'))
-floor_number=find_floor(apartment_number)
-print('квартира',apartment_number,'находится на',floor_number,'этаже')
-(2)
+apartment = int(input('Введите номер квартиры (1-20): '))
+###(1)
+floor = (apartment - 1) // 4 + 1
+###(2)
+number_on_floor = (apartment - 1) % 4 + 1
+print('Квартира', apartment, 'находится на', floor, 'этаже')
+print('Эта квартира', number_on_floor, '-я по счету на этаже')
 
 ###3.13
+n = int(input('Введите порядковый номер (1-50): '))
+columns = 5
+###(1)
+row = (n - 1) // columns + 1
+###(2) 
+column = (n - 1) % columns + 1
+print('Значение с номером', n, 'находится в строке', row, ', столбце', column)
 
 ###3.14
+apartment = int(input('Введите номер квартиры: '))
+###(1)
+entrance = (apartment - 1) // 54 + 1
+###(2)
+apartment_in_entrance = (apartment - 1) % 54 + 1
+floor = (apartment_in_entrance - 1) // 6 + 1
+###(3)
+number_on_floor = (apartment_in_entrance - 1) % 6 + 1
+print('Квартира', apartment, 'находится:')
+print('1) В подъезде:', entrance)
+print('2) На этаже:', floor)
+print('3) На этаже она', number_on_floor, '-я по счету')
 
 ###3.15
+place = int(input('Введите номер места: '))
+###(1)
+section = (place - 1) // 150 + 1
+###(2)
+place_in_section = (place - 1) % 150 + 1
+tier = (place_in_section - 1) // 15 + 1
+print('Место', place, 'находится:')
+print('В секции:', section)
+print('На ярусе:', tier)
 
 ###3.16
 (a)
@@ -294,6 +323,237 @@ print('число при перестановке второй и третьей
 print('число при перестановке двух первых и двух последних цифр',(a//10)%10,(a%10),(a//1000)%10,(a//100)%10)
 
 ###3.29
+n = int(input('Введите число n (n > 9): '))
+units = n % 10
+tens = (n // 10) % 10
+print('Число единиц:', units)
+print('Число десятков:', tens)
+
+###3.30
+n = int(input('Введите число n (n > 99): '))
+tens = (n // 10) % 10
+hundreds = (n // 100) % 10
+print('Число десятков:', tens)
+print('Число сотен:', hundreds)
+
+###3.31
+n = int(input('Введите число n (n > 999): '))
+hundreds = (n // 100) % 10
+thousands = (n // 1000) % 10
+print('Число сотен:', hundreds)
+print('Число тысяч:', thousands)
+
+###3.32
+# 237 → последняя цифра 2, остаток 37
+# Исходное число: 37×10 + 2 = 372
+x = 372
+print('Число x =', x)
+
+###3.33
+n = int(input('Введите число n: '))
+last_digit = n // 100
+first_two = n % 100
+x = first_two * 10 + last_digit
+print('Исходное число x =', x)
+
+###3.34
+# 564 → первая цифра 5, остаток 64
+# Исходное число: 5×100 + 64//10 = 500 + 6 = 506
+x = 506
+print('Число x =', x)
+
+###3.35
+n = int(input('Введите число n (1-999): '))
+first_digit = n // 100
+last_two = n % 100
+x = first_digit * 100 + last_two // 10
+print('Исходное число x =', x)
+
+###3.36
+# 546 → вторая цифра 5, остаток 46
+# Исходное число: 4×100 + 5×10 + 6 = 456
+x = 456
+print('Число x =', x)
+
+###3.37
+n = int(input('Введите число n (10-999): '))
+second_digit = (n // 10) % 10
+first_digit = n // 100
+third_digit = n % 10
+x = first_digit * 100 + second_digit * 10 + third_digit
+print('Исходное число x =', x)
+
+###3.38
+# 456 → вторая цифра 5, остаток 46
+# Исходное число: 4×100 + 5×10 + 6 = 456
+x = 456
+print('Число x =', x)
+
+###3.39
+n = int(input('Введите число n (100-999): '))
+# n = abc, где b - вторая цифра, ac - первая и третья
+second_digit = (n // 10) % 10
+first_digit = n // 100
+third_digit = n % 10
+x = first_digit * 100 + second_digit * 10 + third_digit
+print('Исходное число x =', x)
+
+###3.40
+# 654 → последняя цифра 6, остаток 54 (перевёрнутые цифры)
+# Оригинальные две цифры: 45
+# Исходное число: 4×100 + 5×10 + 6 = 456
+x = 456
+print('Число x =', x)
+
+###3.41
+n = int(input('Введите число n (1-999): '))
+last_digit = n % 10
+reversed_two = n // 10
+first_digit = reversed_two % 10
+second_digit = reversed_two // 10
+x = first_digit * 100 + second_digit * 10 + last_digit
+print('Исходное число x =', x)
+
+###3.42
+a1 = int(input('Введите единицы двузначного числа: '))
+a2 = int(input('Введите десятки двузначного числа: '))
+b = int(input('Введите однозначное число: '))
+sum_units = (a1 + b) % 10  # единицы результата
+carry = (a1 + b) // 10     # перенос в десятки
+sum_tens = a2 + carry      # десятки результата
+print('Цифры результата:')
+print('Десятки:', sum_tens)
+print('Единицы:', sum_units)
+
+###3.43
+a1 = int(input('Введите единицы первого числа: '))
+a2 = int(input('Введите десятки первого числа: '))
+b1 = int(input('Введите единицы второго числа: '))
+b2 = int(input('Введите десятки второго числа: '))
+units_sum = a1 + b1
+carry1 = units_sum // 10
+units_result = units_sum % 10
+tens_sum = a2 + b2 + carry1
+carry2 = tens_sum // 10
+tens_result = tens_sum % 10
+print('Цифры результата:')
+print('Десятки:', tens_result)
+print('Единицы:', units_result)
+
+###3.44
+a1 = int(input('Введите единицы трехзначного числа: '))
+a2 = int(input('Введите десятки трехзначного числа: '))
+a3 = int(input('Введите сотни трехзначного числа: '))
+b1 = int(input('Введите единицы двузначного числа: '))
+b2 = int(input('Введите десятки двузначного числа: '))
+sum1 = a1 + b1
+carry1 = sum1 // 10
+units = sum1 % 10
+sum2 = a2 + b2 + carry1
+carry2 = sum2 // 10
+tens = sum2 % 10
+hundreds = a3 + carry2
+print('Цифры результата:')
+print('Сотни:', hundreds)
+print('Десятки:', tens)
+print('Единицы:', units)
+
+###3.45
+k = int(input('Введите k (1-180): '))
+###(a)
+pair_number = (k + 1) // 2
+###(b)
+if k % 2 == 1:
+    digit = (9 + pair_number) // 10
+else:
+    digit = (9 + pair_number) % 10
+###(c)
+two_digit_number = 9 + pair_number
+print('Номер пары цифр:', pair_number)
+print('Двузначное число:', two_digit_number)
+print('k-я цифра:', digit)
+
+###3.46
+k = int(input('Введите k (1-150): '))
+number_index = (k + 2) // 3  # номер числа от 101 до 150
+number = 100 + number_index  # само число
+position_in_number = (k - 1) % 3
+if position_in_number == 0:
+    digit = number // 100  # первая цифра
+elif position_in_number == 1:
+    digit = (number // 10) % 10  # вторая цифра
+else:
+    digit = number % 10  # третья цифра
+print('k-я цифра:', digit)
+
+###3.47
+h = int(input('Введите часы (1-23): '))
+m = int(input('Введите минуты (0-59): '))
+s = int(input('Введите секунды (0-59): '))
+total_seconds = h * 3600 + m * 60 + s
+angle_per_second = 360 / (12 * 3600)
+angle = total_seconds * angle_per_second
+print('Угол часовой стрелки:', round(angle, 2), 'градусов')
+
+###3.48
+y = float(input('Введите угол в градусах (0-360): '))
+hours = int(y // 30)
+minutes = int((y % 30) * 2)
+print('Полных часов:', hours)
+print('Полных минут:', minutes)
+
+###3.49
+import math
+y = float(input('Введите угол часовой стрелки (0 < y ≤ 2π): '))
+hours = int(y // (math.pi / 6))  
+remaining_angle = y % (math.pi / 6)
+minutes = int(remaining_angle * 30 / math.pi)
+total_minutes = hours * 60 + minutes
+minute_angle = (total_minutes % 60) * (math.pi / 30)  
+print('Полных часов:', hours)
+print('Полных минут в текущем часе:', minutes)
+print('Угол минутной стрелки:', round(minute_angle, 4), 'радиан')
+
+###3.50
+h = int(input('Часы: '))
+m = int(input('Минуты: '))
+total_minutes = h * 60 + m
+###(a)
+next_match = (total_minutes * 11 // 720 + 1) * 720 // 11
+minutes_to_match = next_match - total_minutes
+###(b)
+next_perpendicular = (total_minutes * 11 // 360 + 1) * 360 // 11
+minutes_to_perpendicular = next_perpendicular - total_minutes
+print('До совпадения:', minutes_to_match, 'мин')
+print('До перпендикулярного:', minutes_to_perpendicular, 'мин')
+
+###3.51
+a = int(input('a: '))
+b = int(input('b: '))
+result = (a % b == 0) or (b % a == 0)
+print(int(result)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
