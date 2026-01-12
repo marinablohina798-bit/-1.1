@@ -1,1 +1,159 @@
+### 10.1
+import random
+###(a)
+print("8 случайных чисел [0, 1):")
+for _ in range(8):
+    print(random.random())
 
+### 10.2
+###(a)
+print("\n10 случайных целых чисел [0, 10]:")
+for _ in range(10):
+    print(random.randint(0, 10))
+
+### 10.3
+m = random.randint(1, 20)
+n = random.randint(1, 20)
+print(f"\nm = {m}, n = {n}")
+print(f"{n} целых чисел от {5} до {15}:")
+for _ in range(n):
+    print(random.randint(5, 15))
+print(f"{m} вещественных чисел [0, {n}]:")
+for _ in range(m):
+    print(random.uniform(0, n))
+
+### 10.4
+print("\n50 случайных чисел [0,5], вывод только 0 и 1:")
+for _ in range(50):
+    num = random.randint(0, 5)
+    if num == 0 or num == 1:
+        print(num, end=' ')
+print()
+
+### 10.5
+print("\n30 случайных чисел [0,5], вывод только нечетных:")
+for _ in range(30):
+    num = random.randint(0, 5)
+    if num % 2 == 1:
+        print(num, end=' ')
+print()
+
+### 10.6
+print("\n50 случайных чисел (0 или 1):")
+единицы = 0
+нули = 0
+for _ in range(50):
+    num = random.randint(0, 1)
+    if num == 1:
+        единицы += 1
+        print("1", end=' ')
+    else:
+        нули += 1
+        print("0", end=' ')
+print(f"\nЕдиниц: {единицы}, Нулей: {нули}")
+
+### 10.7
+###(a)
+print("\nДва разных числа:")
+a = random.randint(0, 1)
+b = random.randint(0, 2)
+while a == b:
+    b = random.randint(0, 2)
+print(f"a = {a}, b = {b}")
+
+### 10.8
+print("\nПодбрасывание монеты:")
+результат = random.randint(0, 1)
+if результат == 0:
+    print("Решка")
+else:
+    print("Орел")
+
+### 10.9
+print("\nОтносительная частота для 100 подбрасываний:")
+орлы = 0
+решки = 0
+for _ in range(100):
+    if random.randint(0, 1) == 0:
+        решки += 1
+    else:
+        орлы += 1
+print(f"Орлов: {орлы/100:.3f}, Решек: {решки/100:.3f}")
+print("\nОтносительная частота для 1000 подбрасываний:")
+орлы = 0
+решки = 0
+for _ in range(1000):
+    if random.randint(0, 1) == 0:
+        решки += 1
+    else:
+        орлы += 1
+print(f"Орлов: {орлы/1000:.3f}, Решек: {решки/1000:.3f}")
+
+### 10.10
+print("\nИгра 'Чет или нечет':")
+# Вариант (a): один раз
+print("Чет (2) или нечет (1)?")
+ответ = int(input("Ваш ответ: "))
+компьютер = random.randint(1, 2)
+print(f"Компьютер выбрал: {'четное' if компьютер == 2 else 'нечетное'}")
+if ответ == компьютер:
+    print("Вы угадали!")
+else:
+    print("Вы не угадали.")
+
+### 10.11
+print("\nБросание игрального кубика:")
+print(f"Выпало: {random.randint(1, 6)}")
+
+### 10.12
+print("\nДва игрока бросают кубик:")
+игрок1 = random.randint(1, 6)
+игрок2 = random.randint(1, 6)
+print(f"Игрок 1: {игрок1}")
+print(f"Игрок 2: {игрок2}")
+if игрок1 > игрок2:
+    print("Победил игрок 1")
+elif игрок2 > игрок1:
+    print("Победил игрок 2")
+else:
+    print("Ничья")
+
+### 10.13
+print("\nИгра с двумя участниками (2 броска):")
+# Вариант 1: каждый бросает два раза
+счёт1 = 0
+счёт2 = 0
+for _ in range(2):
+    счёт1 += random.randint(1, 6)
+    счёт2 += random.randint(1, 6)
+print(f"Игрок 1: {счёт1}, Игрок 2: {счёт2}")
+if счёт1 > счёт2:
+    print("Победил игрок 1")
+elif счёт2 > счёт1:
+    print("Победил игрок 2")
+else:
+    print("Ничья")
+
+### 10.14
+print("\nТри игрока бросают по K кубиков:")
+K = 3
+игроки = [0, 0, 0]
+for i in range(3):
+    for _ in range(K):
+        игроки[i] += random.randint(1, 6)
+    print(f"Игрок {i+1}: {игроки[i]}")
+максимум = max(игроки)
+победители = [i+1 for i, score in enumerate(игроки) if score == максимум]
+if len(победители) == 1:
+    print(f"Победил игрок {победители[0]}")
+else:
+    print(f"Ничья между игроками {победители}")
+
+### 10.15
+print("\nОтносительная частота выпадения граней кубика (100 бросков):")
+частоты = [0]*7
+for _ in range(100):
+    грань = random.randint(1, 6)
+    частоты[грань] += 1
+for i in range(1, 7):
+    print(f"{i}: {частоты[i]/100:.3f}")
