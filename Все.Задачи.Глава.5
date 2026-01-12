@@ -1,1 +1,843 @@
+###5.1
+for _ in range(9):
+    print(20, end=' ')
 
+###5.2
+n = int(input("Введите число: "))
+k = int(input("Сколько раз вывести: "))
+for _ in range(k):
+    print(n, end=' ')
+
+###5.3a
+for i in range(20, 36):
+    print(i)
+print()
+###(b)
+a = int(input("Введите a (≤50): "))
+for i in range(a, 51):
+    print(i**2)
+print()
+###(c)
+b = int(input("Введите b (>10): "))
+for i in range(10, b+1):
+    print(i**3)
+print()
+###(d)
+a = int(input("Введите a: "))
+b = int(input("Введите b (>a): "))
+for i in range(a, b+1):
+    print(i)
+print()
+
+###5.4a
+for i in range(10, 26):
+    print(i, i + 0.4)
+print()
+###(b)
+for i in range(25, 36):
+    print(i, i + 0.5, i - 0.2)
+print()
+
+###5.5a
+for i in range(21, 9, -1):
+    print(i, i - 1.8)
+print()
+###(b)
+for i in range(45, 24, -1):
+    print(i, i - 0.5, i - 0.8)
+print()
+
+###5.6a
+for i in range(21, 36):
+    print(i, i - 0.6)
+print()
+###(b)
+for i in range(16, 25):
+    print(i, i - 0.5, i + 0.8)
+print()
+
+###5.7
+price = 20.4
+for i in range(2, 21):
+    print(f"{i} шт: {price * i:.1f} руб")
+print()
+
+###5.8
+print("Фунты    Кг")
+for pounds in range(1, 11):
+    kg = pounds * 0.453
+    print(f"{pounds}       {kg:.3f}")
+print()
+
+###5.9
+print("Дюймы   См")
+for inches in range(10, 23):
+    cm = inches * 2.54
+    print(f"{inches}       {cm:.2f}")
+print()
+
+###5.10
+rate = float(input("Курс доллара: "))
+for dollars in range(1, 21):
+    rub = dollars * rate
+    print(f"{dollars}$ = {rub:.2f} руб")
+print()
+
+###5.11
+R = 6350
+for h in range(1, 11):
+    d = ((R + h)**2 - R**2)**0.5
+    print(f"Высота {h} км: {d:.2f} км")
+print()
+
+###5.12
+p0 = 1.29
+z = 1.25e-4
+print("Высота (м)   Плотность (кг/м³)")
+for h in range(0, 1100, 100):
+    p = p0 * 2.71828**(-h*z)
+    print(f"{h:10}   {p:.4f}")
+print()
+
+###5.13
+for i in range(1, 10):
+    print(f"{i} × 7 = {i * 7}")
+print()
+
+###5.14
+for i in range(1, 10):
+    print(f"9 × {i} = {9 * i}")
+print()
+
+###5.15
+n = int(input("Введите n (1-9): "))
+for i in range(1, 10):
+    print(f"{i} × {n} = {i * n}")
+print()
+
+###5.16
+import math
+for i in range(2, 16):
+    print(f"sin({i}) = {math.sin(i):.4f}")
+print()
+
+###5.17
+for x in range(4, 29):
+    t = x + 3
+    y = 3*t**2 + 4.87*t - 3
+    print(f"x={x}, y={y:.2f}")
+print()
+
+###5.18
+for a in range(2, 18):
+    t = 3*a
+    z = 4.3*t**2 - 8*t + 13
+    print(f"a={a}, z={z:.2f}")
+print()
+
+###5.19
+import math
+x = 0.1
+while x <= 1.5:
+    print(f"sin({x:.1f}) = {math.sin(x):.4f}")
+    x += 0.1
+print()
+
+###5.20
+import math
+x = 0.1
+while x < 1.0:
+    print(f"√{x:.1f} = {math.sqrt(x):.4f}")
+    x += 0.1
+print()
+
+###5.21
+price = float(input("Стоимость 1 кг сыра: "))
+for grams in range(50, 1050, 50):
+    cost = price * grams / 1000
+    print(f"{grams} г = {cost:.2f} руб")
+print()
+
+###5.22
+price = float(input("Стоимость 1 кг конфет: "))
+for grams in range(100, 2100, 100):
+    cost = price * grams / 1000
+    print(f"{grams} г = {cost:.2f} руб")
+print()
+
+###5.23
+x = 2.1
+while x <= 2.8:
+    print(f"{x:.1f}")
+    x += 0.1
+print()
+
+###5.24
+x = 3.2
+while x <= 3.9:
+    print(f"{x:.1f}")
+    x += 0.1
+print()
+
+###5.25
+x = 2.2
+while x <= 4.2:
+    print(f"{x:.1f}")
+    x += 0.2
+print()
+
+###5.26
+x = 4.4
+while x <= 6.4:
+    print(f"{x:.1f}")
+    x += 0.2
+print()
+
+###5.27a
+print(f"Сумма от 200 до 600: {sum(range(200, 601))}")
+print()
+###(b)
+a = int(input("Введите a (≤400): "))
+print(f"Сумма от {a} до 400: {sum(range(a, 401))}")
+print()
+###(c)
+b = int(input("Введите b (≥-15): "))
+print(f"Сумма от -15 до {b}: {sum(range(-15, b+1))}")
+print()
+###(d)
+a = int(input("Введите a: "))
+b = int(input("Введите b (≥a): "))
+print(f"Сумма от {a} до {b}: {sum(range(a, b+1))}")
+print()
+
+###5.28a
+product = 1
+for i in range(7, 15):
+    product *= i
+print(f"Произведение от 7 до 14: {product}")
+print()
+###(b)
+a = int(input("Введите a (1-15): "))
+product = 1
+for i in range(a, 16):
+    product *= i
+print(f"Произведение от {a} до 15: {product}")
+print()
+###(c)
+b = int(input("Введите b (1-10): "))
+product = 1
+for i in range(1, b+1):
+    product *= i
+print(f"Произведение от 1 до {b}: {product}")
+print()
+###(d)
+a = int(input("Введите a: "))
+b = int(input("Введите b (≥a): "))
+product = 1
+for i in range(a, b+1):
+    product *= i
+print(f"Произведение от {a} до {b}: {product}")
+print()
+
+###5.29a
+total = sum(range(1, 751))
+count = 750
+print(f"Среднее арифметическое от 1 до 750: {total/count:.2f}")
+print()
+###(b)
+b = int(input("Введите b (≥150): "))
+total = sum(range(150, b+1))
+count = b - 149
+print(f"Среднее арифметическое от 150 до {b}: {total/count:.2f}")
+print()
+###(c)
+a = int(input("Введите a (≤200): "))
+total = sum(range(a, 201))
+count = 201 - a
+print(f"Среднее арифметическое от {a} до 200: {total/count:.2f}")
+print()
+###(d)
+a = int(input("Введите a: "))
+b = int(input("Введите b (≥a): "))
+total = sum(range(a, b+1))
+count = b - a + 1
+print(f"Среднее арифметическое от {a} до {b}: {total/count:.2f}")
+print()
+
+###5.30a
+total = sum(i**3 for i in range(25, 41))
+print(f"Сумма кубов от 25 до 40: {total}")
+print()
+###(b)
+a = int(input("Введите a (0-50): "))
+total = sum(i**2 for i in range(a, 51))
+print(f"Сумма квадратов от {a} до 50: {total}")
+print()
+###(c)
+n = int(input("Введите n (1-100): "))
+total = sum(i**2 for i in range(1, n+1))
+print(f"Сумма квадратов от 1 до {n}: {total}")
+print()
+###(d)
+a = int(input("Введите a: "))
+b = int(input("Введите b (≥a): "))
+total = sum(i**2 for i in range(a, b+1))
+print(f"Сумма квадратов от {a} до {b}: {total}")
+print()
+
+###5.31
+n = int(input("Введите n: "))
+total = sum((n + i)**2 for i in range(n+1))
+print(f"Сумма от n^2 до (2n)^2: {total}")
+print()
+
+###5.32
+n = int(input("Введите n: "))
+total = sum(1/i for i in range(1, n+1))
+print(f"Сумма 1 + 1/2 + ... + 1/{n}: {total:.4f}")
+print()
+
+###5.33
+total = sum(i/(i+1) for i in range(2, 11))
+print(f"Сумма 2/3 + 3/4 + ... + 10/11: {total:.4f}")
+print()
+
+###5.34
+n = int(input("Введите n: "))
+total = sum(i**2 for i in range(1, n+1))
+print(f"Сумма = : {total}")
+print()
+
+###5.35
+n = int(input("Введите n (≥2): "))
+total = sum(i*(i+1) for i in range(1, n))
+print(f"Сумма 1×2 + 2×3 + ... + (n-1)×n: {total}")
+print()
+
+###5.36
+total = 0
+term = 1
+for _ in range(9):
+    total += term
+    term /= 3
+print(f"Сумма 1 + 1/3 + 1/3^2 + ... + 1/3^8: {total:.6f}")
+print()
+
+###5.37
+n = int(input("Введите n: "))
+total = 0
+sign = 1
+for i in range(1, n+1):
+    total += sign / i
+    sign = -sign
+print(f"Сумма 1 - 1/2 + 1/3 - ... ± 1/{n}: {total:.6f}")
+print()
+
+###5.38
+x = 2
+total = 0
+for p in range(1, 12, 2):
+    total += x**p / p
+print(f"Сумма x + x^3/3 + ... + x^11/11 при x=2: {total:.6f}")
+print()
+
+###5.39
+x = 2
+total = 0
+sign = 1
+for n in range(1, 12):
+    total += sign * (n+1)/(n+2) * x**(n-1)
+    sign = -sign
+print(f"Сумма при x=2: {total:.6f}")
+print()
+
+###5.40
+num = input("Введите 9-значное число: ")
+total = sum(int(digit) for digit in num)
+print(f"Сумма цифр: {total}")
+print()
+
+###5.41
+num = int(input("Введите число: "))
+n = int(input("Сколько последних цифр (n): "))
+total_sum = 0
+total_product = 1
+for _ in range(n):
+    digit = num % 10
+    total_sum += digit
+    total_product *= digit
+    num //= 10
+print(f"Сумма последних {n} цифр: {total_sum}")
+print(f"Произведение последних {n} цифр: {total_product}")
+print()
+
+###5.42a
+distance = 0
+sign = 1
+for i in range(1, 101):
+    distance += sign * 1/i
+    sign = -sign
+print(f"Расстояние от дома после 100 этапа: {distance:.6f} км")
+print()
+###(b)
+total_path = 0
+for i in range(1, 101):
+    total_path += 1/i
+print(f"Общий пройденный путь: {total_path:.6f} км")
+print()
+
+###5.43
+n = int(input("Введите n: "))
+a = [0]*(n+1)
+a[0] = 1
+for k in range(1, n+1):
+    a[k] = k*a[k-1] + 1/k
+print("Последовательность:", a)
+print()
+
+###5.44a
+n = int(input("Введите n (≥3): "))
+a, b = 1, 1
+for _ in range(3, n+1):
+    a, b = b, a + b
+print(f"{n}-й член Фибоначчи: {b}")
+print()
+###(b)
+n = int(input("Введите n (≥3): "))
+fib = [1, 1]
+for i in range(2, n):
+    fib.append(fib[i-1] + fib[i-2])
+print(f"Первые {n} членов Фибоначчи: {fib}")
+print()
+
+###5.45
+fib = [1, 1]
+for i in range(2, 10):
+    fib.append(fib[i-1] + fib[i-2])
+print("3-10 члены Фибоначчи:", fib[2:])
+print()
+
+###5.46a
+k = int(input("Введите k: "))
+num1, num2 = 1, 2
+den1, den2 = 1, 1
+for i in range(3, k+1):
+    num3 = num1 + num2
+    den3 = den1 + den2
+    num1, num2 = num2, num3
+    den1, den2 = den2, den3
+print(f"{k}-й член: {num2}/{den2}")
+print()
+###(b)
+n = int(input("Введите n: "))
+nums = [1, 2]
+dens = [1, 1]
+for i in range(2, n):
+    nums.append(nums[i-1] + nums[i-2])
+    dens.append(dens[i-1] + dens[i-2])
+print("Первые n членов:")
+for i in range(n):
+    print(f"{nums[i]}/{dens[i]}")
+print()
+
+###5.48
+cells = 1
+for hours in range(3, 25, 3):
+    cells *= 2
+    print(f"Через {hours} часов: {cells} клеток")
+print()
+
+###5.49a
+deposit = 1000
+for month in range(1, 11):
+    increase = deposit * 0.02
+    deposit += increase
+    print(f"Прирост за {month} месяц: {increase:.2f} руб")
+print()
+###(b)
+deposit = 1000
+for month in range(1, 13):
+    if month >= 3:
+        deposit *= 1.02
+    if month >= 3:
+        print(f"Сумма через {month} месяцев: {deposit:.2f} руб")
+print()
+
+###5.50a
+distance = 10
+for day in range(2, 11):
+    distance *= 1.1
+    print(f"Пробег за {day} день: {distance:.2f} км")
+print()
+###(b)
+total = 10
+distance = 10
+for day in range(2, 8):
+    distance *= 1.1
+    total += distance
+print(f"Суммарный путь за 7 дней: {total:.2f} км")
+print()
+
+###5.51a
+yield_rate = 20
+for year in range(2, 9):
+    yield_rate *= 1.02
+    print(f"Урожайность за {year} год: {yield_rate:.2f} ц/га")
+print()
+###(b)
+area = 100
+for year in range(4, 8):
+    area *= 1.05
+    print(f"Площадь в {year} году: {area:.2f} га")
+print()
+###(c)
+total_yield = 0
+area = 100
+yield_rate = 20
+for year in range(1, 7):
+    total_yield += area * yield_rate
+    area *= 1.05
+    yield_rate *= 1.02
+print(f"Урожай за 6 лет: {total_yield:.2f} ц")
+print()
+
+###5.52
+import math
+total_volume = 0
+radius = 5  # 10 см диаметр = 5 см радиус
+for ball in range(12):
+    volume = 4/3 * math.pi * radius**3 / 1000  # в литрах
+    total_volume += volume
+    radius += 0.5  # толщина стенки 5 мм = 0.5 см
+print(f"Суммарный объем: {total_volume:.4f} л")
+print()
+
+###5.53
+total = 0
+power = 4
+for i in range(2, 11):
+    total += power
+    power *= 2
+print(f"Сумма = : {total}")
+print()
+
+###5.54
+a = float(input("Введите a: "))
+n = int(input("Введите n: "))
+power = 1
+for i in range(1, n+1):
+    power *= a
+    print(f"{a}^{i} = {power}")
+print()
+
+###5.55
+total = 0
+sign = -1
+for i in range(1, 11):
+    total += sign * i**2
+    sign = -sign
+print(f"Сумма= : {total}")
+print()
+
+###5.56
+import math
+area = 0
+n = 1000
+dx = math.pi / n
+for i in range(n):
+    x = i * dx
+    area += math.sin(x) * dx
+print(f"Площадь арки синусоиды: {area:.6f}")
+print()
+
+###5.59
+n = int(input("Введите n: "))
+factorial = 1
+for i in range(1, n+1):
+    factorial *= i
+print(f"{n}! = {factorial}")
+print()
+
+###5.60
+n = int(input("Введите целое число n: "))
+a = float(input("Введите вещественное число a: "))
+product = 0
+for _ in range(abs(n)):
+    product += a
+if n < 0:
+    product = -product
+print(f"{n} × {a} = {product}")
+print()
+
+###5.61
+x = int(input("Введите x: "))
+y = int(input("Введите y: "))
+###Способ 1
+product = 0
+for _ in range(abs(y)):
+    product += x
+if y < 0:
+    product = -product
+print(f"Способ 1: {x} × {y} = {product}")
+###Способ.2
+product = 0
+for _ in range(abs(x)):
+    product += y
+if x < 0:
+    product = -product
+print(f"Способ 2: {x} × {y} = {product}")
+print()
+
+###5.62
+a = float(input("Введите a: "))
+n = int(input("Введите n: "))
+result = 1
+for _ in range(abs(n)):
+    result *= a
+if n < 0:
+    result = 1/result
+print(f"{a}^{n} = {result}")
+print()
+
+###5.64
+num = input("Введите семизначное число: ")
+reversed_num = num[::-1]
+print(f"Число справа налево: {reversed_num}")
+print()
+
+###5.65
+n = int(input("Введите n: "))
+odd_sum = 0
+odd = 1
+for _ in range(n):
+    odd_sum += odd
+    odd += 2
+print(f"{n}^2 = {odd_sum} = 1 + 3 + ... + {2*n-1}")
+print()
+
+###5.66
+total = 0
+odd = 1
+for i in range(1, 13):
+    total += odd
+    odd += 2
+print(f"Сумма = {total}")
+print()
+
+###5.68
+n = int(input("Введите n (2-10): "))
+total = 0
+fact = 1
+for i in range(1, n+1):
+    fact *= i
+    total += fact
+print(f"Сумма 1! + 2! + ... + {n}! = {total}")
+print()
+
+###5.69
+n = int(input("Введите n (2-10): "))
+total = 1
+fact = 1
+for i in range(1, n+1):
+    fact *= i
+    total += 1/fact
+print(f"Сумма 1 + 1/1! + ... + 1/{n}! = {total:.6f}")
+print()
+
+###5.70
+x = float(input("Введите x: "))
+n = int(input("Введите n (2-10): "))
+total = 1
+fact = 1
+power = 1
+for i in range(1, n+1):
+    fact *= i
+    power *= x
+    total += power/fact
+print(f"Сумма = {total:.6f}")
+print()
+
+###5.71
+import math
+result = 0
+for i in range(50, 0, -1):
+    result = math.sqrt(i + result)
+print(f"√(1 + √(2 + ... + √(50))) = {result:.6f}")
+print()
+
+###5.74
+###1
+for i in range(10, 101):
+    if i % 2 != 0:
+        print(i, end=' ')
+print()
+###2
+for i in range(11, 101, 2):
+    print(i, end=' ')
+print("\n")
+
+###5.75
+for i in range(100, 201):
+    if i % 3 == 0:
+        print(i, end=' ')
+print("\n")
+
+###5.76
+a = int(input("Введите a: "))
+b = int(input("Введите b: "))
+c = int(input("Введите c: "))
+for i in range(a, b+1):
+    if i % c == 0:
+        print(i, end=' ')
+print("\n")
+
+###5.77
+for i in range(11, 100):
+    if i % 2 != 0 and (i % 10 == 3 or i % 10 == 7):
+        print(i, end=' ')
+print("\n")
+
+###5.78
+for i in range(100, 1000):
+    if i % 47 == 43 and i % 43 == 45:
+        print(i, end=' ')
+print("\n")
+
+###5.79
+for i in range(1000, 10000):
+    if i % 133 == 125 and i % 134 == 111:
+        print(i, end=' ')
+print("\n")
+
+###5.80
+n = int(input("Введите n: "))
+for i in range(10, 100):
+    if i % n == 0 or str(n) in str(i):
+        print(i, end=' ')
+print("\n")
+
+###5.81a
+for i in range(100, 1000):
+    square = i**2
+    if str(square)[-3:] == str(i):
+        print(i, end=' ')
+print("\n")
+###(b)
+for i in range(100, 1000):
+    if i % 7 == 0 and sum(int(d) for d in str(i)) % 7 == 0:
+        print(i, end=' ')
+print("\n")
+
+###5.82a
+for i in range(10, 100):
+    digit_sum = sum(int(d)**2 for d in str(i))
+    if digit_sum % 13 == 0:
+        print(i, end=' ')
+print("\n")
+###(b)
+for i in range(10, 100):
+    digit_sum = sum(int(d) for d in str(i))
+    if digit_sum + digit_sum**2 == i:
+        print(i, end=' ')
+print("\n")
+
+###5.83
+total = sum(i for i in range(1, 50, 2))
+print(f"Сумма положительных нечетных чисел < 50: {total}")
+print()
+
+###5.84
+total = sum(i for i in range(100, 1000, 2))
+print(f"Сумма всех четных трехзначных чисел: {total}")
+print()
+
+###5.85
+a = int(input("Введите a: "))
+b = int(input("Введите b: "))
+total = sum(i for i in range(a, b+1) if i % 4 == 0 and i > 0)
+print(f"Сумма чисел от {a} до {b}, кратных 4: {total}")
+print()
+
+###5.86
+total = sum(i for i in range(31, 100) if i % 3 == 0 and i % 10 in [2, 4, 8])
+print(f"Сумма чисел: {total}")
+print()
+
+###5.87
+count = sum(1 for i in range(100, 501) if sum(int(d) for d in str(i)) == 15)
+print(f"Количество чисел от 100 до 500 с суммой цифр 15: {count}")
+print()
+
+###5.88
+s = int(input("Введите s (1-27): "))
+count = sum(1 for i in range(100, 1000) if sum(int(d) for d in str(i)) == s)
+print(f"Количество трехзначных чисел с суммой цифр {s}: {count}")
+print()
+
+###5.89
+count = sum(1 for i in range(100, 1000) if i % 7 == 0 and sum(int(d) for d in str(i)) % 7 == 0)
+print(f"Количество трехзначных чисел, кратных 7 с суммой цифр кратной 7: {count}")
+print()
+
+###5.90
+n = int(input("Введите n: "))
+a, b = 1, 1
+total = 2  # 1+1
+for _ in range(3, n+1):
+    a, b = b, a + b
+    total += b
+print(f"Сумма первых {n} чисел Фибоначчи: {total}")
+print(f"Четное: {total % 2 == 0}")
+print()
+
+###5.91a
+num = int(input("Введите число: "))
+print("Делители:", end=' ')
+for i in range(1, num+1):
+    if num % i == 0:
+        print(i, end=' ')
+print()
+###(b)
+div_sum = sum(i for i in range(1, num+1) if num % i == 0)
+print(f"Сумма делителей: {div_sum}")
+###(c)
+even_div_sum = sum(i for i in range(1, num+1) if num % i == 0 and i % 2 == 0)
+print(f"Сумма четных делителей: {even_div_sum}")
+###(d)
+div_count = sum(1 for i in range(1, num+1) if num % i == 0)
+print(f"Количество делителей: {div_count}")
+###(e)
+odd_div_count = sum(1 for i in range(1, num+1) if num % i == 0 and i % 2 != 0)
+print(f"Количество нечетных делителей: {odd_div_count}")
+###(f)
+even_div_count = sum(1 for i in range(1, num+1) if num % i == 0 and i % 2 == 0)
+print(f"Количество четных делителей: {even_div_count}")
+###(g)
+d = int(input("Введите d: "))
+count = sum(1 for i in range(1, num+1) if num % i == 0 and i > d)
+print(f"Количество делителей > {d}: {count}")
+print()
+
+###5.92
+num = int(input("Введите число: "))
+is_prime = True
+for i in range(2, int(num**0.5)+1):
+    if num % i == 0:
+        is_prime = False
+        break
+print(f"Простое: {is_prime}")
+print()
+
+###5.93
+num = int(input("Введите число: "))
+div_sum = sum(i for i in range(1, num) if num % i == 0)
+print(f"Совершенное: {div_sum == num}")
+print()
+
+###5.94
+n = int(input("Введите n: "))
+i = 1
+while i*i <= n:
+    print(i, end=' ')
+    i += 1
+print()
